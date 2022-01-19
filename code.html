@@ -82,25 +82,80 @@ bscf=
             <h2 class="border-1 border-bottom border-dark"> The Code</h2>
             <div class="row">
                 <div class="col-12 col-lg-8">
-                    <pre class="line-numbers"><code class="language-js"> // Dispalying Darren to unsuspecting Victims
- function getMessage(){
+                    <pre class="line-numbers"><code class="language-js"> function getValues2() {
 
- let userMessage = document.getElementById("message").value;
+    let firstValue = document.getElementById("firstValue").value;
+    let secondValue = document.getElementById("secondValue").value;
 
- Swal.fire(
-'The App Title',
-userMessage,
-'question'
- );
- console.log(userMessage);
-};
+    firstValue = parseInt(firstValue);
+    secondValue = parseInt(secondValue);
+
+    if (Number.isInteger(firstValue) && Number.isInteger(secondValue)) {
+
+        let fbData = generateData(firstValue, secondValue);
+
+         displayNumbers(fbData);
+    }
+
+    else {
+        Swal.fire({
+            icon: 'error',
+            title: 'oops...',
+            text: 'Only integers above 0 are allowed to FizzBuzz!'
+        } );
+    }
+}
+
+function generateData(firstValue, secondValue){
+
+    let numbers = [];
+    let IsFizz = false;
+    let IsBuzz = false;
+    for (let index = 1; index <= 100; index++) {
+        
+        IsFizz = (index % firstValue == 0);
+        IsBuzz = (index % secondValue == 0);
+        if (IsFizz && IsBuzz) {
+            numbers.push('FizzBuzz')
+        }
+        else if(IsFizz){
+            numbers.push('Fizz')
+        }
+        else if(IsBuzz){
+            numbers.push('Buzz')
+        }
+        else{
+            numbers.push(index);
+        }
+    }
+    return numbers;
+
+}
+
+function displayNumbers(fbData){
+    let contentDiv = document.getElementById("results");
+    let content ="";
+
+    //clear previous data
+    contentDiv.innerHTML ="";
+
+    for (let index = 0; index < fbData.length; index++) {
+        let dataValue = fbData[index];
+        let dataElement = `<div class="col ${dataValue}">${dataValue}</div>`;
+        content += dataElement;
+    }
+    
+    //write the results to the page.
+    contentDiv.innerHTML = content;
+}
                         </code>
                     </pre>
                 </div>
-                <div class="col-12 col-lg-4">
-                    <p>The code is structured in one function. it accesses the users input the displays a Sweetalert funtion.</p>
-                    <h5>getMessages</h5>
-                    <p>Prints the user's inputted message.</p>
+                <div class="col-12 col-lg-4 border-start border-2">
+                   <h4 class="border-bottom border-3 border-dark">Team Fizz or Team Buzz?</h4>
+                    <p>The code is structured into three functions. It accesses the users choosen numbers and lays out one through one hundred, 
+                        revealing the multiples of the choosen numbers as Fizz, Buzz, (or if both) FizzBuzz. If nothing, or a non-integer is choosen,
+                        it displays a Sweetalert funtion.</p>
                 </div>
             </div>
         </div>
