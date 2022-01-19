@@ -7,7 +7,7 @@ bscf=
 ---------------------------------------------------------------------------------------------------------------------------->
 
 <head>
-    <title>APP NAME: A JS PROJECT</title>
+    <title>FizzBuzz: Coding Challenge</title>
 
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -39,9 +39,9 @@ bscf=
     <nav class="navbar navbar-expand-md navbar-dark fixed-top navbarBG">
         <div class="container-fluid">
             <a class="navbar-brand" href="/index.html">
-                <img src="/IMG/MspectreMark.svg" alt="App Name Place Hokder" height="24"
+                <img src="/IMG/Corvid-white.PNG" alt="App Name Place Hokder" height="35"
                     class="d-inline-block align-text-top">
-                APP NAME
+                Fizzbuzz
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
                 aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -77,18 +77,44 @@ bscf=
 
     <main class="flex-shrink-0">
         <div class="container">
-            <div>
-                <h1>APP UI WILL GO HERE</h1>
-                <input id="message" name="message" placeholder="Enter A Message">
-                <div class="py-2">
-                <button id="btnSubmit" class="btn btn-primary">Display Message</button>
-                </div>
-            </div>
+             <div class="row">
+                 <div class="col-6 d-flex justify-content-center">
+                     <div>
+                        <h1 class="border-bottom border-5 border-dark">FizzBuzz: A Coding Challenge</h1>
+                     </div>
+                 </div>
+                 <div class="col-12 mt-5">
+                     <div>
+                         <H5>Enter Multiples</H5>
+                         <form class="row">
+                             <div class="col-12">
+                                 <label for="firstValue" class="form-label">Enter a Number</label>
+                                 <input id="firstValue" type="number" class="form-control"
+                                     placeholder="Place number here" value=0 aria-label="First Value">
+                             </div>
+                             <div class="col-12">
+                                 <label for="secondValue" class="form-label">Enter Another Number</label>
+                                 <input id="secondValue" type="number" class="form-control" placeholder="Place number here"
+                                     value=100 aria-label="Second Value">
+                             </div>
+                             <div class="col-12 d-flex justify-content-start justify-content-lg-end my-2">
+                                 <button id="btnSubmit" type="button" class="btn btn-primary btn-large">Buzz it</button>
+                             </div>
+                         </form>
+                         <h2 class="mt-5 border-bottom border-5 border-dark">Results</h2>
+                         <div class="table-responsive">
+                            <div id="results" class='row row-cols-5'>
+                               
+                            </div>
+                         </div>
+                     </div>
+                 </div>
+             </div>
         </div>
     </main>
 
 
-    <!--------------------------------------------------------------------------------------------------------------------------
+<!--------------------------------------------------------------------------------------------------------------------------
     Footer
 ---------------------------------------------------------------------------------------------------------------------------->
 
@@ -131,7 +157,7 @@ bscf=
     <!-----Java Link----->
     <script src="/JS/site.js"></script>
     <script>
-        document.getElementById("btnSubmit").addEventListener("click", getMessage);
+        document.getElementById("btnSubmit").addEventListener("click", getValues2);
     </script>
 </body>
 <!-----End Body----->
