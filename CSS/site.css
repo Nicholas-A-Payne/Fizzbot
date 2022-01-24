@@ -121,3 +121,7 @@ main>.container {
     color: #ff5b5b;
     font-weight: bold;
   }
+
+  .btmLogo{
+      font-family: 'Limelight', cursive;
+  }
